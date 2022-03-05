@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addExpense } from '../actions';
+import { fetchRate } from '../actions';
 
 class Form extends React.Component {
   state = {
@@ -10,6 +10,7 @@ class Form extends React.Component {
     coin: '',
     method: '',
     tag: '',
+    coinsCode: undefined,
   }
 
   handleChange = ({ target }) => {
@@ -27,6 +28,8 @@ class Form extends React.Component {
   }
 
   render() {
+    const { coinsList } = this.props;
+
     return (
       <form>
         <label htmlFor="value-input">
@@ -66,7 +69,9 @@ class Form extends React.Component {
             id="currency-input"
             data-testid="currency-input"
           >
-            <option>a</option>
+            { coinsList.map((coinCode) => (
+              <option key={ coinCode }>{ coinCode }</option>
+            ))}
           </select>
         </label>
 
@@ -114,10 +119,15 @@ class Form extends React.Component {
 
 Form.propTypes = {
   saveExpense: PropTypes.func.isRequired,
+  coinsList: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  saveExpense: (expenseData) => dispatch(addExpense(expenseData)),
+const mapStateToProps = (state) => ({
+  coinsList: state.coinsList.coinsListArr,
 });
 
-export default connect(null, mapDispatchToProps)(Form);
+const mapDispatchToProps = (dispatch) => ({
+  saveExpense: (expenseData) => dispatch(fetchRate(expenseData)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

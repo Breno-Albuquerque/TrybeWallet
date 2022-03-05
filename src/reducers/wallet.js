@@ -9,7 +9,7 @@ const wallet = (state = INITIAL_STATE, action) => {
   case 'EXPENSE':
     return {
       ...state,
-      expenses: [...state.expenses, { ...action.payload, id: state.expenses.length }],
+      expenses: [...state.expenses, { id: state.expenses.length, ...action.payload }],
     };
   default:
     return state;

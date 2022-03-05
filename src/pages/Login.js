@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { sendEmail } from '../actions';
+import { fetchCoinsList, sendEmail } from '../actions';
 
 class Login extends React.Component {
   state = {
@@ -19,10 +19,11 @@ class Login extends React.Component {
   }
 
   handleClick = () => {
-    const { history, saveEmail } = this.props;
+    const { history, saveEmail, searchCoinsList } = this.props;
     const { email } = this.state;
 
     saveEmail(email);
+    searchCoinsList();
     history.push('/carteira');
   }
 
@@ -103,11 +104,13 @@ class Login extends React.Component {
 
 const mapDispatchToProps = (dispatch) => ({
   saveEmail: (email) => dispatch(sendEmail(email)),
+  searchCoinsList: () => dispatch(fetchCoinsList()),
 });
 
 Login.propTypes = {
   saveEmail: PropTypes.func.isRequired,
   history: PropTypes.func.isRequired,
+  searchCoinsList: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(Login);

@@ -6,10 +6,10 @@ const INITIAL_STATE = {
 
 const wallet = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case 'WALLET':
+  case 'EXPENSE':
     return {
       ...state,
-      user: { },
+      expenses: [...state.expenses, { ...action.payload, id: state.expenses.length }],
     };
   default:
     return state;

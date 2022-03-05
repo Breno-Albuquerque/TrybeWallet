@@ -3,26 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 class Header extends React.Component {
-  state = {
-    totalSum: 0,
-  }
-
-  handleSum = () => {
-    const { expensesArr } = this.props;
-
-    expensesArr.forEach((expense) => {
-      const value = Number(expense.value);
-      const rate = Number(expense.exchangeRates.ask);
-      const result = value * rate;
-      this.setState((prevState) => ({
-        totalSum: Number(prevState.totalSum) + result,
-      }));
-    });
-  }
-
   render() {
-    const { userEmail } = this.props;
-    const { totalSum } = this.state;
+    const { userEmail, totalSum } = this.props;
 
     return (
       <>
@@ -36,12 +18,12 @@ class Header extends React.Component {
 
 const mapStateToProps = (state) => ({
   userEmail: state.user.email,
-  expensesArr: state.wallet.expenses,
+  totalSum: state.wallet.total,
 });
 
 Header.propTypes = {
   userEmail: PropTypes.string.isRequired,
-  expensesArr: PropTypes.objectOf(PropTypes.string).isRequired,
+  totalSum: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, null)(Header);

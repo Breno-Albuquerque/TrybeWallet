@@ -7,10 +7,9 @@ class Form extends React.Component {
   state = {
     value: '',
     description: '',
-    coin: '',
-    method: '',
-    tag: '',
-    coinsCode: undefined,
+    coin: 'USD',
+    method: 'Dinheiro',
+    tag: 'Alimentação',
   }
 
   handleChange = ({ target }) => {
@@ -23,8 +22,20 @@ class Form extends React.Component {
 
   handleClick = () => {
     const { saveExpense } = this.props;
+    const { expensesArr } = this.props;
 
-    saveExpense(this.state);
+    if (expensesArr.length > 0) {
+      const currTotal = expensesArr.reduce((acc, curr) => {
+        const { value } = curr;
+        const code = curr.exchangeRates[curr.coin];
+        const { ask } = code;
+        const convertion = Number(value) * Number(ask);
+        return acc + convertion;       
+      }, 0);
+      saveExpense(this.state, currTotal);
+    } else {
+      saveExpense(this.state);
+    } 
   }
 
   render() {
@@ -106,10 +117,7 @@ class Form extends React.Component {
           <select
             name="tag"
             onChange={ this.handleChange }
-            id="tag-input"
-            data-testid="tag-input"
-          >
-            <option>Alimentação</option>
+            id="tag-input"totalption>
             <option>Lazer</option>
             <option>Transporte</option>
             <option>Trabalho</option>
@@ -130,10 +138,11 @@ Form.propTypes = {
 
 const mapStateToProps = (state) => ({
   coinsList: state.coinsList.coinsListArr,
+  expensesArr: state.wallet.expenses,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  saveExpense: (expenseData) => dispatch(fetchRate(expenseData)),
+  saveExpense: (expenseData, currTotal) => dispatch(fetchRate(expenseData, currTotal)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

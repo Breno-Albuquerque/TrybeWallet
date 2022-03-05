@@ -70,7 +70,13 @@ class Form extends React.Component {
             data-testid="currency-input"
           >
             { coinsList.map((coinCode) => (
-              <option key={ coinCode }>{ coinCode }</option>
+              <option
+                data-testid={ coinCode }
+                key={ coinCode }
+              >
+                { coinCode }
+
+              </option>
             ))}
           </select>
         </label>

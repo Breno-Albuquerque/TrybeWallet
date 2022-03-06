@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchRate } from '../actions';
+import './Form.css';
 
 class Form extends React.Component {
   state = {

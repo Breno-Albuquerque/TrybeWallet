@@ -5,7 +5,7 @@
 
 header {
   align-items: center;
-  background-color: rgb(24,25,26);
+  background-color: rgb(24, 25, 26);
   display: flex;
   justify-content: space-between;
   min-height: 10vh;

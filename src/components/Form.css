@@ -33,10 +33,10 @@ label {
   width: 100%;
 }
 
-input, select {
+input , select {
   align-self: center;
-  border-radius: 5px;
   border: 1px solid white;
+  border-radius: 5px;
   height: 25px;
   margin: 10px 0;
   width: 70%;

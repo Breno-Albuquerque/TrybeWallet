@@ -2,3 +2,27 @@
   margin: 0;
   padding: 0;
 }
+
+header {
+  align-items: center;
+  background-color: rgb(24,25,26);
+  display: flex;
+  justify-content: space-between;
+  min-height: 10vh;
+  padding: 0 50px;
+}
+
+.title-container {
+  color: rgb(29, 185, 83);
+  flex-grow: 0.8;
+}
+
+.infos-div {
+  color: white;
+  font-size: 20px;
+}
+
+span {
+  color: rgb(29, 185, 83);
+  margin: 0 10px;
+}

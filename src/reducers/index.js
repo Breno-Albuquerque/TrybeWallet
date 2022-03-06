@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux';
 import user from './user';
 import wallet from './wallet';
-import coinsList from './coinsList';
 
 const rootReducer = combineReducers({
   user,
   wallet,
-  coinsList,
 });
 
 export default rootReducer;

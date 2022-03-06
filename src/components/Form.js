@@ -7,7 +7,7 @@ class Form extends React.Component {
   state = {
     value: '',
     description: '',
-    coin: 'USD',
+    currency: 'USD',
     method: 'Dinheiro',
     tag: 'Alimentação',
   }
@@ -22,23 +22,15 @@ class Form extends React.Component {
 
   handleClick = () => {
     const { saveExpense } = this.props;
-    const { expensesArr } = this.props;
+    saveExpense(this.state);
 
-    if (expensesArr.length > 0) {
-      const currTotal = expensesArr.reduce((acc, curr) => {
-        const { value } = curr;
-        const code = curr.exchangeRates[curr.coin];
-        const { ask } = code;
-        const convertion = Number(value) * Number(ask);
-        return acc + convertion;       
-      }, 0);
-      saveExpense(this.state, currTotal);
-    } else {
-      saveExpense(this.state);
-    } 
+    this.setState({
+      value: '',
+    });
   }
 
   render() {
+    const { value } = this.state;
     const { coinsList } = this.props;
 
     return (
@@ -49,6 +41,7 @@ class Form extends React.Component {
           {' '}
           {' '}
           <input
+            value={ value }
             name="value"
             onChange={ this.handleChange }
             id="value-input"
@@ -75,12 +68,12 @@ class Form extends React.Component {
           {' '}
           {' '}
           <select
-            name="coin"
+            name="currency"
             onChange={ this.handleChange }
             id="currency-input"
             data-testid="currency-input"
           >
-            { coinsList.map((coinCode) => (
+            { coinsList && coinsList.map((coinCode) => (
               <option
                 data-testid={ coinCode }
                 key={ coinCode }
@@ -117,10 +110,13 @@ class Form extends React.Component {
           <select
             name="tag"
             onChange={ this.handleChange }
-            id="tag-input"totalption>
+            data-testid="tag-input"
+            id="tag-input"
+          >
             <option>Lazer</option>
             <option>Transporte</option>
             <option>Trabalho</option>
+            <option>Alimentação</option>
             <option>Saúde</option>
           </select>
         </label>
@@ -137,12 +133,11 @@ Form.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  coinsList: state.coinsList.coinsListArr,
   expensesArr: state.wallet.expenses,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  saveExpense: (expenseData, currTotal) => dispatch(fetchRate(expenseData, currTotal)),
+  saveExpense: (expenseData) => dispatch(fetchRate(expenseData)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

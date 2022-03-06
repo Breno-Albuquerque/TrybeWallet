@@ -35,95 +35,97 @@ class Form extends React.Component {
     const { coinsList } = this.props;
 
     return (
-      <form>
-        <label htmlFor="value-input">
-          {' '}
-          Valor:
-          {' '}
-          {' '}
-          <input
-            value={ value }
-            name="value"
-            onChange={ this.handleChange }
-            id="value-input"
-            data-testid="value-input"
-          />
-        </label>
+      <div className="div-form-container">
+        <form className="main-form">
+          <label className="input-label" htmlFor="value-input">
+            {' '}
+            Valor:
+            {' '}
+            {' '}
+            <input
+              value={ value }
+              name="value"
+              onChange={ this.handleChange }
+              id="value-input"
+              data-testid="value-input"
+            />
+          </label>
 
-        <label htmlFor="description-input">
-          {' '}
-          Descrição:
-          {' '}
-          {' '}
-          <input
-            name="description"
-            onChange={ this.handleChange }
-            id="description-input"
-            data-testid="description-input"
-          />
-        </label>
+          <label className="input-label" htmlFor="description-input">
+            {' '}
+            Descrição:
+            {' '}
+            {' '}
+            <input
+              name="description"
+              onChange={ this.handleChange }
+              id="description-input"
+              data-testid="description-input"
+            />
+          </label>
 
-        <label htmlFor="currency-input">
-          {' '}
-          Moeda
-          {' '}
-          {' '}
-          <select
-            name="currency"
-            onChange={ this.handleChange }
-            id="currency-input"
-            data-testid="currency-input"
-          >
-            { coinsList && coinsList.map((coinCode) => (
-              <option
-                data-testid={ coinCode }
-                key={ coinCode }
-              >
-                { coinCode }
+          <label className="select-label" htmlFor="currency-input">
+            {' '}
+            Moeda
+            {' '}
+            {' '}
+            <select
+              name="currency"
+              onChange={ this.handleChange }
+              id="currency-input"
+              data-testid="currency-input"
+            >
+              { coinsList && coinsList.map((coinCode) => (
+                <option
+                  data-testid={ coinCode }
+                  key={ coinCode }
+                >
+                  { coinCode }
 
-              </option>
-            ))}
-          </select>
-        </label>
+                </option>
+              ))}
+            </select>
+          </label>
 
-        <label htmlFor="method-input">
-          {' '}
-          Método de pagamento:
-          {' '}
-          {' '}
-          <select
-            name="method"
-            onChange={ this.handleChange }
-            id="method-input"
-            data-testid="method-input"
-          >
-            <option>Dinheiro</option>
-            <option>Cartão de crédito</option>
-            <option>Cartão de débito</option>
-          </select>
-        </label>
+          <label className="select-label" htmlFor="method-input">
+            {' '}
+            Método de pagamento:
+            {' '}
+            {' '}
+            <select
+              name="method"
+              onChange={ this.handleChange }
+              id="method-input"
+              data-testid="method-input"
+            >
+              <option>Dinheiro</option>
+              <option>Cartão de crédito</option>
+              <option>Cartão de débito</option>
+            </select>
+          </label>
 
-        <label htmlFor="tag-input">
-          {' '}
-          Categoria:
-          {' '}
-          {' '}
-          <select
-            name="tag"
-            onChange={ this.handleChange }
-            data-testid="tag-input"
-            id="tag-input"
-          >
-            <option>Lazer</option>
-            <option>Transporte</option>
-            <option>Trabalho</option>
-            <option>Alimentação</option>
-            <option>Saúde</option>
-          </select>
-        </label>
+          <label htmlFor="tag-input" className="select-label">
+            {' '}
+            Categoria:
+            {' '}
+            {' '}
+            <select
+              name="tag"
+              onChange={ this.handleChange }
+              data-testid="tag-input"
+              id="tag-input"
+            >
+              <option>Lazer</option>
+              <option>Transporte</option>
+              <option>Trabalho</option>
+              <option>Alimentação</option>
+              <option>Saúde</option>
+            </select>
+          </label>
 
-        <button onClick={ this.handleClick } type="button">Adicionar despesa</button>
-      </form>
+          <button onClick={ this.handleClick } type="button">Adicionar despesa</button>
+        </form>
+      </div>
     );
   }
 }

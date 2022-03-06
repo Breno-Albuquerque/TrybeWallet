@@ -63,9 +63,9 @@ class Login extends React.Component {
     const { isDisabled } = this.state;
 
     return (
-      <main id="login-main">
-        <div id="content-container">
-          <h1 id="login-title">WALLET</h1>
+      <main className="login-main">
+        <div className="content-container">
+          <h1 className="login-title">WALLET</h1>
           <form className="login-form">
             <label htmlFor="email-input" className="login-label">
               <input

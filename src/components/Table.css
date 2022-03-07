@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.table-container {
+ flex-grow: 1;
+}
+
+table, tr {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: space-around;
+}
+
+table {
+  border: 1px solid black;
+  flex-wrap: wrap;
+}
+
+tr {
+  border: 1px solid black;
+}

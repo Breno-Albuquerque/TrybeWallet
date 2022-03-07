@@ -8,9 +8,6 @@
   color: white;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-around;
-  min-height: 100%;
   width: 18%;
 }
 

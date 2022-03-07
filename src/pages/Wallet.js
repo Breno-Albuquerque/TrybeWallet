@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Form from '../components/Form';
+import Table from '../components/Table';
 import './Wallet.css';
 
 class Wallet extends React.Component {
@@ -26,7 +27,11 @@ class Wallet extends React.Component {
     return (
       <main className="wallet-container">
         <Header />
-        <Form coinsList={ coinsList } />
+        <div className="tableAndForm-components-container">
+          <Form coinsList={ coinsList } />
+          <Table />
+        </div>
+
       </main>
     );
   }

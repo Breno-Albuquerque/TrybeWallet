@@ -5,6 +5,8 @@ export const addExpense = (expenseData, coinsData) => (
   { type: 'EXPENSE',
     payload: { ...expenseData, exchangeRates: { ...coinsData } } });
 
+export const deleteExpense = (expenseIndex) => ({ type: 'DELETE_EXPENSE', expenseIndex });
+
 export const fetchRate = (expenseData) => async (dispatch) => {
   const response = await fetch('https://economia.awesomeapi.com.br/json/all');
   const coinsData = await response.json();

@@ -2,11 +2,17 @@ import React from 'react';
 import './Table.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { deleteExpense } from '../actions/index';
 
 class Table extends React.Component {
+  handleDeleteButton = (expenseIndex) => {
+    const { removeExpense } = this.props;
+
+    removeExpense(expenseIndex);
+  }
+
   getCoinName = (expense) => {
     const { exchangeRates, currency } = expense;
-
     const coinName = exchangeRates[currency].name;
 
     return coinName;
@@ -14,7 +20,6 @@ class Table extends React.Component {
 
   getExchangeValue = (expense) => {
     const { exchangeRates, currency } = expense;
-
     const { ask } = exchangeRates[currency];
 
     return Number(ask).toFixed(2);
@@ -22,7 +27,6 @@ class Table extends React.Component {
 
   getConvertedValue = (expense) => {
     const { exchangeRates, currency, value } = expense;
-
     const { ask } = exchangeRates[currency];
 
     return (Number(ask) * Number(value)).toFixed(2);
@@ -45,7 +49,7 @@ class Table extends React.Component {
             <th>Moeda de conversão</th>
             <th>Editar/Excluir</th>
           </tr>
-          { expenses.map((expense) => (
+          { expenses.map((expense, index) => (
             <tr key={ expense.id }>
               <td>{ expense.description }</td>
               <td>{ expense.tag }</td>
@@ -55,7 +59,15 @@ class Table extends React.Component {
               <td>{ this.getExchangeValue(expense) }</td>
               <td>{ this.getConvertedValue(expense) }</td>
               <td>Real</td>
-              <td>Editar/excluir</td>
+              <td>
+                <button
+                  type="button"
+                  data-testid="delete-btn"
+                  onClick={ () => this.handleDeleteButton(index) }
+                >
+                  Excluir
+                </button>
+              </td>
             </tr>
           )) }
         </table>
@@ -66,10 +78,15 @@ class Table extends React.Component {
 
 Table.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.string).isRequired,
+  removeExpense: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
 });
 
-export default connect(mapStateToProps, null)(Table);
+const mapDispatchToProps = (dispatch) => ({
+  removeExpense: (expenseIndex) => dispatch(deleteExpense(expenseIndex)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table);

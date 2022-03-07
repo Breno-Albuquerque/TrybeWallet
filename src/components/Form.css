@@ -7,8 +7,8 @@
   background-color: rgb(24, 25, 26);
   color: white;
   display: flex;
-  flex-direction: column;
   flex-basis: 20%;
+  flex-direction: column;
 }
 
 .main-form {

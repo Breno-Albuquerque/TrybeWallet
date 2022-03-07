@@ -1,5 +1,6 @@
 import React from 'react';
 import './Table.css';
+import { connect } from 'react-redux';
 
 class Table extends React.Component {
   render() {
@@ -23,4 +24,8 @@ class Table extends React.Component {
   }
 }
 
-export default Table;
+const mapStateToProps = (state) => ({
+  expenses: state.wallet.expenses;
+});
+
+export default connect(mapStateToProps, null)(Table);

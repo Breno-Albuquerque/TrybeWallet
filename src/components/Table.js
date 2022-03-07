@@ -25,7 +25,7 @@ class Table extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  expenses: state.wallet.expenses;
+  expenses: state.wallet.expenses,
 });
 
 export default connect(mapStateToProps, null)(Table);

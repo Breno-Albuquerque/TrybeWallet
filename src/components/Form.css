@@ -8,7 +8,7 @@
   color: white;
   display: flex;
   flex-direction: column;
-  width: 25%;
+  flex-basis: 20%;
 }
 
 .main-form {

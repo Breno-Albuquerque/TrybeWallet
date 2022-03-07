@@ -7,9 +7,7 @@ class Table extends React.Component {
   getCoinName = (expense) => {
     const { exchangeRates, currency } = expense;
 
-    const keyName = exchangeRates[currency].name;
-
-    const coinName = keyName.slice(0, keyName.indexOf('/'));
+    const coinName = exchangeRates[currency].name;
 
     return coinName;
   }

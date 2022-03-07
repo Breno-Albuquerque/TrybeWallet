@@ -47,9 +47,13 @@
 
 .login-input {
   border: rgb(29, 185, 83) 2px solid;
+  background-color: rgb(232, 240, 254);
   border-radius: 5px;
+  font-family: monospace;
+  font-size: 15px;
   height: 40px;
   margin-bottom: 30px;
+  padding-left: 15px;
   width: 75%;
 }
 

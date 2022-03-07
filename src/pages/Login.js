@@ -70,7 +70,7 @@ class Login extends React.Component {
             <label htmlFor="email-input" className="login-label">
               <input
                 className="login-input"
-                placeholder="Email"
+                placeholder="Digite seu email"
                 name="email"
                 onChange={ this.handleChange }
                 id="email-input"
@@ -81,7 +81,7 @@ class Login extends React.Component {
             <label htmlFor="password-input" className="login-label">
               <input
                 className="login-input"
-                placeholder="Senha"
+                placeholder="Digite sua senha"
                 name="password"
                 onChange={ this.handleChange }
                 id="password-input"

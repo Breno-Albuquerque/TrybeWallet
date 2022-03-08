@@ -2,9 +2,15 @@ import React from 'react';
 import './Table.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { deleteExpense } from '../actions/index';
+import { deleteExpense, turnEditModeOn } from '../actions/index';
 
 class Table extends React.Component {
+  handleEditButton = (index) => {
+    const { enterEditMode } = this.props;
+
+    enterEditMode(index);
+  }
+
   handleDeleteButton = (expenseIndex) => {
     const { removeExpense } = this.props;
 
@@ -38,12 +44,12 @@ class Table extends React.Component {
     return (
       <div className="table-container">
         <table>
-          <tr>
+          <tr className="tr-of-th">
             <th>Descrição</th>
             <th>Tag</th>
             <th>Método de pagamento</th>
             <th>Valor</th>
-            <th>Moeda</th>
+            <th className="coin-td">Moeda</th>
             <th>Câmbio utilizado</th>
             <th>Valor convertido</th>
             <th>Moeda de conversão</th>
@@ -55,17 +61,25 @@ class Table extends React.Component {
               <td>{ expense.tag }</td>
               <td>{ expense.method }</td>
               <td>{ Number(expense.value).toFixed(2) }</td>
-              <td>{ this.getCoinName(expense) }</td>
+              <td className="coin-td">{ this.getCoinName(expense) }</td>
               <td>{ this.getExchangeValue(expense) }</td>
               <td>{ this.getConvertedValue(expense) }</td>
               <td>Real</td>
               <td>
                 <button
                   type="button"
+                  data-testid="edit-btn"
+                  onClick={ () => this.handleEditButton(index) }
+                >
+                  Edit
+                </button>
+                <button
+                  className="table-button"
+                  type="button"
                   data-testid="delete-btn"
                   onClick={ () => this.handleDeleteButton(index) }
                 >
-                  Excluir
+                  X
                 </button>
               </td>
             </tr>
@@ -79,14 +93,17 @@ class Table extends React.Component {
 Table.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.string).isRequired,
   removeExpense: PropTypes.func.isRequired,
+  enterEditMode: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
+  isEditing: state.wallet.isEditing,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   removeExpense: (expenseIndex) => dispatch(deleteExpense(expenseIndex)),
+  enterEditMode: (index) => dispatch(turnEditModeOn(index)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);

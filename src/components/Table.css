@@ -8,17 +8,61 @@
   flex-grow: 1;
 }
 
-table , tr {
-  display: flex;
-  flex-basis: 100%;
-  justify-content: space-around;
-}
-
 table {
-  border: 1px solid black;
   flex-wrap: wrap;
 }
 
+table , tr {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+}
+
 tr {
-  border: 1px solid black;
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  flex-basis: 90%;
+  border-bottom: 1px solid black;
+  justify-content: space-evenly;
+}
+
+.coin-td {
+  width: 150px;
+  font-size: 15px;
+}
+
+td, th {
+  flex-basis: 80px;
+}
+
+td {
+  display: flex;
+  height: 80px;
+  align-items: center;
+}
+
+
+.tr-of-th {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 10px;
+  border: none;
+  flex-basis: 90%;
+  align-items: center;
+  display: flex;
+  min-height: 80px;
+  background-color: rgb(29, 185, 83);
+  color: white;
+  font-size: 18px;
+}
+
+.table-button {
+  background-color: rgb(190, 36, 54);
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  border-style: none;
+  color: white;
+  cursor: pointer;
 }

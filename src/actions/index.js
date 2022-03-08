@@ -1,9 +1,19 @@
 // Coloque aqui suas actions
 export const sendEmail = (email) => ({ type: 'EMAIL', email });
 
+export const saveCurrencies = (currenciesArr) => ({
+  type: 'ADD_CURRENCIES', currencies: currenciesArr });
+
 export const addExpense = (expenseData, coinsData) => (
-  { type: 'EXPENSE',
+  { type: 'ADD_EXPENSE',
     payload: { ...expenseData, exchangeRates: { ...coinsData } } });
+
+export const turnEditModeOn = (index) => ({ type: 'EDIT_MODE', editingIndex: index });
+
+export const editExpense = (expenseData, index) => ({
+  type: 'EDIT_EXPENSE',
+  payload: { expenseData, index },
+});
 
 export const deleteExpense = (expenseIndex) => ({ type: 'DELETE_EXPENSE', expenseIndex });
 

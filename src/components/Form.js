@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchRate } from '../actions';
+import { fetchRate, editExpense } from '../actions';
 import './Form.css';
 
 class Form extends React.Component {
@@ -22,17 +22,22 @@ class Form extends React.Component {
   }
 
   handleClick = () => {
-    const { saveExpense } = this.props;
-    saveExpense(this.state);
+    const { saveExpense, edit, isEditing, editingIndex } = this.props;
 
-    this.setState({
-      value: '',
-    });
+    if (isEditing) {
+      edit(this.state, editingIndex);
+    } else {
+      saveExpense(this.state);
+
+      this.setState({
+        value: '',
+      });
+    }
   }
 
   render() {
     const { value } = this.state;
-    const { coinsList } = this.props;
+    const { currencies, isEditing } = this.props;
 
     return (
       <div className="div-form-container">
@@ -48,6 +53,7 @@ class Form extends React.Component {
               onChange={ this.handleChange }
               id="value-input"
               data-testid="value-input"
+              autoComplete="off"
             />
           </label>
 
@@ -61,6 +67,7 @@ class Form extends React.Component {
               onChange={ this.handleChange }
               id="description-input"
               data-testid="description-input"
+              autoComplete="off"
             />
           </label>
 
@@ -75,7 +82,7 @@ class Form extends React.Component {
               id="currency-input"
               data-testid="currency-input"
             >
-              { coinsList && coinsList.map((coinCode) => (
+              { currencies.map((coinCode) => (
                 <option
                   data-testid={ coinCode }
                   key={ coinCode }
@@ -123,7 +130,13 @@ class Form extends React.Component {
             </select>
           </label>
 
-          <button onClick={ this.handleClick } type="button">Adicionar despesa</button>
+          <button
+            className="form-button"
+            onClick={ this.handleClick }
+            type="button"
+          >
+            { isEditing ? 'Editar despesa' : 'Adicionar despesa'}
+          </button>
         </form>
       </div>
     );
@@ -132,15 +145,22 @@ class Form extends React.Component {
 
 Form.propTypes = {
   saveExpense: PropTypes.func.isRequired,
-  coinsList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  edit: PropTypes.func.isRequired,
+  editingIndex: PropTypes.number.isRequired,
+  isEditing: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   expensesArr: state.wallet.expenses,
+  isEditing: state.wallet.isEditing,
+  editingIndex: state.wallet.editingIndex,
+  currencies: state.wallet.currencies,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   saveExpense: (expenseData) => dispatch(fetchRate(expenseData)),
+  edit: (expenseData, index) => dispatch(editExpense(expenseData, index)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

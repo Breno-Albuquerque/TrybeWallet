@@ -55,6 +55,18 @@ td {
   margin-bottom: 10px;
   min-height: 80px;
 }
+.table-edit-button {
+  background-color: rgb(247, 201, 0);
+  border-radius: 100%;
+  border-style: none;
+  color: black;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 900;
+  height: 30px;
+  transition-duration: 0.3s;
+  width: 30px;
+}
 
 .table-delete-button {
   background-color: rgb(190, 36, 54);
@@ -72,17 +84,4 @@ td {
   font-size: 18px;
   height: 38px;
   width: 38px;
-}
-
-.table-edit-button {
-  background-color: rgb(247, 201, 0);
-  border-radius: 100%;
-  border-style: none;
-  color: black;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 900;
-  height: 30px;
-  transition-duration: 0.3s;
-  width: 30px;
 }

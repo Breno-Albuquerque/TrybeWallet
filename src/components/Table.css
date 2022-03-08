@@ -32,7 +32,7 @@ tr {
   width: 150px;
 }
 
-td, th {
+td , th {
   flex-basis: 80px;
 }
 
@@ -45,9 +45,9 @@ td {
 .tr-of-th {
   align-items: center;
   background-color: rgb(29, 185, 83);
+  border: none;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  border: none;
   color: white;
   display: flex;
   flex-basis: 90%;
@@ -68,7 +68,7 @@ td {
   width: 30px;
 }
 
-.table-delete-button:hover , .table-edit-button:hover {
+.table-edit-button:hover , .table-delete-button:hover {
   font-size: 18px;
   height: 38px;
   width: 38px;

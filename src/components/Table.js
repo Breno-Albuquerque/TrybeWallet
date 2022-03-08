@@ -67,14 +67,15 @@ class Table extends React.Component {
               <td>Real</td>
               <td>
                 <button
+                  className="table-edit-button"
                   type="button"
                   data-testid="edit-btn"
                   onClick={ () => this.handleEditButton(index) }
                 >
-                  Edit
+                  !
                 </button>
                 <button
-                  className="table-button"
+                  className="table-delete-button"
                   type="button"
                   data-testid="delete-btn"
                   onClick={ () => this.handleDeleteButton(index) }

@@ -57,12 +57,33 @@ td {
   font-size: 18px;
 }
 
-.table-button {
+.table-delete-button {
   background-color: rgb(190, 36, 54);
-  height: 30px;
-  width: 30px;
   border-radius: 100%;
   border-style: none;
   color: white;
   cursor: pointer;
+  height: 30px;
+  margin-left: 5px;
+  transition-duration: 0.3s;
+  width: 30px;
+}
+
+.table-delete-button:hover , .table-edit-button:hover {
+  font-size: 18px;
+  height: 38px;
+  width: 38px;
+}
+
+.table-edit-button {
+  background-color: rgb(247, 201, 0);
+  border-radius: 100%;
+  border-style: none;
+  color: black;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 900;
+  height: 30px;
+  transition-duration: 0.3s;
+  width: 30px;
 }

@@ -131,7 +131,7 @@ class Form extends React.Component {
           </label>
 
           <button
-            className="form-button"
+            className={ isEditing ? 'form-edit-button' : 'form-add-button' }
             onClick={ this.handleClick }
             type="button"
           >

@@ -19,17 +19,17 @@ table , tr {
 }
 
 tr {
-  display: flex;
-  margin-bottom: 10px;
   align-items: center;
-  flex-basis: 90%;
   border-bottom: 1px solid black;
+  display: flex;
+  flex-basis: 90%;
   justify-content: space-evenly;
+  margin-bottom: 10px;
 }
 
 .coin-td {
-  width: 150px;
   font-size: 15px;
+  width: 150px;
 }
 
 td, th {
@@ -37,24 +37,23 @@ td, th {
 }
 
 td {
+  align-items: center;
   display: flex;
   height: 80px;
-  align-items: center;
 }
 
-
 .tr-of-th {
+  align-items: center;
+  background-color: rgb(29, 185, 83);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  margin-bottom: 10px;
   border: none;
-  flex-basis: 90%;
-  align-items: center;
-  display: flex;
-  min-height: 80px;
-  background-color: rgb(29, 185, 83);
   color: white;
+  display: flex;
+  flex-basis: 90%;
   font-size: 18px;
+  margin-bottom: 10px;
+  min-height: 80px;
 }
 
 .table-delete-button {

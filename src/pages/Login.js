@@ -69,6 +69,7 @@ class Login extends React.Component {
           <form className="login-form">
             <label htmlFor="email-input" className="login-label">
               <input
+                autoComplete="off"
                 className="login-input"
                 placeholder="Digite seu email"
                 name="email"
@@ -80,6 +81,7 @@ class Login extends React.Component {
             </label>
             <label htmlFor="password-input" className="login-label">
               <input
+                autoComplete="off"
                 className="login-input"
                 placeholder="Digite sua senha"
                 name="password"

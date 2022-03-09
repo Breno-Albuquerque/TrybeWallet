@@ -92,7 +92,7 @@ class Login extends React.Component {
               />
             </label>
             <button
-              className="login-button"
+              className={ isDisabled ? 'login-button-disabled' : 'login-button-enabled' }
               disabled={ isDisabled }
               onClick={ this.handleClick }
               type="button"

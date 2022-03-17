@@ -71,7 +71,7 @@ class Login extends React.Component {
               <input
                 autoComplete="off"
                 className="login-input"
-                placeholder="Digite seu email"
+                placeholder='Email: "alguem@email.com"'
                 name="email"
                 onChange={ this.handleChange }
                 id="email-input"
@@ -83,7 +83,7 @@ class Login extends React.Component {
               <input
                 autoComplete="off"
                 className="login-input"
-                placeholder="Digite sua senha"
+                placeholder="Senha: 6 dígitos"
                 name="password"
                 onChange={ this.handleChange }
                 id="password-input"

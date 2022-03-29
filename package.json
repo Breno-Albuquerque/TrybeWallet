@@ -2,7 +2,7 @@
   "name": "sd-0x-project-trybewallet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https:\/\/breno-albuquerque.github.io/trybewallet",
+  "homepage": "https:\/\/breno-albuquerque.github.io/my-trybewallet",
   "engines": {
     "node": "16"
   },

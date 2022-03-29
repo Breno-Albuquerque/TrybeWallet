@@ -40,7 +40,7 @@ class Form extends React.Component {
     const { currencies, isEditing } = this.props;
 
     return (
-      <div className="div-form-container">
+      <div className={ isEditing ? 'div-form-container-editing' : 'div-form-container' }>
         <form className="main-form">
           <label className="input-label" htmlFor="value-input">
             {' '}

@@ -10,7 +10,7 @@ class Form extends React.Component {
     description: '',
     currency: 'USD',
     method: 'Dinheiro',
-    tag: 'Alimentação',
+    tag: 'Lazer',
   }
 
   handleChange = ({ target }) => {

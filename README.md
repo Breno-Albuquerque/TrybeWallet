@@ -24,4 +24,4 @@
 
 ## Trybe:
 
-- This projects was devoloped while I was studying the Fron-End course of [Trybe](https://www.betrybe.com/) .
+- This project was devoloped while I was studying the Front-End course of [Trybe](https://www.betrybe.com/), with the goal to improve and consolidate react and redux skills.

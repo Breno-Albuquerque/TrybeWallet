@@ -21,3 +21,7 @@
 
 - React
 - Redux
+
+## Trybe:
+
+- This projects was devoloped while I was studying the Fron-End course of [Trybe](https://www.betrybe.com/) .

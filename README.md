@@ -1,62 +1,24 @@
-# Habilidades
+# What is TrybeWallet:
 
-Neste projeto, verificamos se voce é capaz de:
+- It's a virtual wallet able to store multiple expenses in different currency values.
+- By registering your expenses, the total amount spent will be avaible in the screen.
+- If you want, it's possible to edit or remove any expense and every thing will be updated for you.
 
-- Criar um store Redux em aplicações React
+# How to use it:
 
-- Criar reducers no Redux em aplicações React
+- Once you the run application, you will land in the log in screen.
+- First of all, you need to type a valid e-mail (exemple@exemple.com) and a valid password (at least six characteres), then you can log in.
+- In the main page, there is a form that you can fill out and add a new expense to the list.
+- When you are registering a new expense you can type it's value, description, currency, payment method and category.
+- All the expenses have two button, by clicking in the yellow one you can edit it, and the red one removes it.
+- At the top the total sum off all expenses will be available converted to Brazil's currency.
 
-- Criar actions no Redux em aplicações React
+## This project works with the following API:
 
-- Criar dispatchers no Redux em aplicações React
+- (https://docs.awesomeapi.com.br/api-de-moedas).
 
-- Conectar Redux aos componentes React
+## Main tech stack:
 
-- Criar actions assíncronas na sua aplicação React que faz uso de Redux.
-
----
-
-# Entregáveis
-
-## O que deverá ser desenvolvido
-
-Neste projeto você vai desenvolver uma carteira de controle de gastos com conversor de moedas, ao utilizar essa aplicação um usuário deverá ser capaz de:
-
-- Adicionar, remover e editar um gasto;
-- Visualizar uma tabelas com seus gastos;
-- Visualizar o total de gastos convertidos para uma moeda de escolha;
-
-Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
-
-Lembre-se que você pode consultar nosso conteúdo sobre Git & GitHub no Course sempre que precisar!
-
-## Documentação da API de Cotações de Moedas
-
-Sua página _web_ irá consumir os dados da API do _awesomeapi API de Cotações_ para realizar a busca de câmbio de moedas. Para realizar essas buscas, vocês precisarão consultar o seguinte _endpoint_:
-
-- <https://economia.awesomeapi.com.br/json/all>
-
-O retorno desse endpoint será algo no formato:
-
-```
-{
-   {
-     "USD": {
-       "code":"USD",
-       "codein":"BRL",
-       "name":"Dólar Americano/Real Brasileiro",
-       "high":"5.6689",
-       "low":"5.6071",
-       "varBid":"-0.0166",
-       "pctChange":"-0.29",
-       "bid":"5.6173",
-       "ask":"5.6183",
-       "timestamp":"1601476370",
-       "create_date":"2020-09-30 11:32:53"
-       },
-      ...
-   }
-}
-```
-
-Se você quiser aprender mais informações sobre a API, veja a [documentação](https://docs.awesomeapi.com.br/api-de-moedas).
+- React
+- Redux
+- 

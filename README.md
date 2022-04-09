@@ -2,7 +2,7 @@
 
 - It's a virtual wallet able to store multiple expenses in different currency values.
 - By registering your expenses, the total amount spent will be avaible in the screen.
-- If you want, it's possible to edit or remove any expense and every thing will be updated for you.
+- If you want, it's possible to edit or remove any expense and everything will be updated for you.
 
 # How to use it:
 
@@ -21,4 +21,3 @@
 
 - React
 - Redux
-- 

@@ -26,28 +26,35 @@ class Header extends React.Component {
 
     return (
       <header>
+        <h1 className="header-title">TRYBE WALLET</h1>
 
-        <div className="title-container">
-          <h1>TRYBE WALLET</h1>
-        </div>
+        <section className="infos-container">
+          <div
+            className="infos-div"
+            data-testid="email-field"
+          >
+            <span>Email:</span>
+            {' '}
+            { userEmail }
+          </div>
 
-        <div className="infos-div" data-testid="email-field">
-          <span>Email:</span>
-          {' '}
-          { userEmail }
-        </div>
-        <div className="infos-div" data-testid="total-field">
-          <span>Despesa Total:</span>
-          {' '}
-          {'R$ '}
-          { this.handleSum() }
-        </div>
-        <div
-          className="infos-div"
-          data-testid="header-currency-field"
-        >
-          <span>BRL</span>
-        </div>
+          <div
+            className="infos-div"
+            data-testid="total-field"
+          >
+            <span>Despesa Total:</span>
+            {' '}
+            {'R$ '}
+            { this.handleSum() }
+          </div>
+
+          <div
+            className="infos-div"
+            data-testid="header-currency-field"
+          >
+            <span>BRL</span>
+          </div>
+        </section>
       </header>
     );
   }

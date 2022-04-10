@@ -4,22 +4,35 @@
 }
 
 header {
-  align-items: center;
-  background-color: rgb(24, 25, 26);
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  min-height: 10vh;
+
+  font-size: 16px;
+
+  background-color: rgb(24, 25, 26);
+  height: 10vh;
+
   padding: 0 50px;
 }
 
-.title-container {
+.infos-container {
+  display: flex;
+  justify-content: space-evenly;
+
+  min-width: 40%;
+  max-width: 60%;
+}
+
+.header-title {
   color: rgb(29, 185, 83);
-  flex-grow: 0.8;
+
+  font-size: 2em;
 }
 
 .infos-div {
   color: white;
-  font-size: 20px;
+  font-size: 1.3em;
 }
 
 span {

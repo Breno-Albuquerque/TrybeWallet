@@ -105,8 +105,7 @@
 }
 
 .login-button-enabled:hover {
-  background-color: rgb(29, 165, 76);
-  font-size: 25px;
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 1200px) {

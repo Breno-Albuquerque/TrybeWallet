@@ -1,14 +1,14 @@
-# Application link:
+## Application link:
 
-- https://trybewallet-b.vercel.app"
+- https://trybewallet-b.vercel.app
 
-## What is TrybeWallet:
+# What is TrybeWallet:
 
 - It's a virtual wallet able to store multiple expenses in different currency values.
 - By registering your expenses, the total amount spent will be avaible in the screen.
 - If you want, it's possible to edit or remove any expense and everything will be updated for you.
 
-## How to use it:
+# How to use it:
 
 - Once you the run application, you will land in the log in screen.
 - First of all, you need to type a valid e-mail (exemple@exemple.com) and a valid password (at least six characteres), then you can log in.

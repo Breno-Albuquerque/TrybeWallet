@@ -11,7 +11,8 @@
   flex-direction: column;
 
   transition: all ease 0.5s;
-  width: 20%; 
+  width: 20%;
+  height: 90vh;
 }
 
 .div-form-container-editing {

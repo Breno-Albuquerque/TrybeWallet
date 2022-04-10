@@ -95,5 +95,8 @@ td {
 @media screen and (max-width: 1200px) {
   .table-container {
     width: 100%;
+    height:unset;
+
+    overflow: hidden;
   }
 }

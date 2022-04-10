@@ -109,7 +109,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .login-main {
-    font-size: 12px;
+  .content-container {
+    width: 40vw;
   }
 }

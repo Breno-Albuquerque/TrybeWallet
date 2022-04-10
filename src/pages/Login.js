@@ -86,6 +86,9 @@ class Login extends React.Component {
                 placeholder="Senha: 6 dígitos"
                 name="password"
                 onChange={ this.handleChange }
+                onKeyUp={
+                  (event) => (event.key === 'Enter' && !isDisabled) && this.handleClick()
+                }
                 id="password-input"
                 data-testid="password-input"
                 type="password"

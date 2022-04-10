@@ -1,10 +1,14 @@
-# What is TrybeWallet:
+# Application link:
+
+- https://trybewallet-b.vercel.app"
+
+## What is TrybeWallet:
 
 - It's a virtual wallet able to store multiple expenses in different currency values.
 - By registering your expenses, the total amount spent will be avaible in the screen.
 - If you want, it's possible to edit or remove any expense and everything will be updated for you.
 
-# How to use it:
+## How to use it:
 
 - Once you the run application, you will land in the log in screen.
 - First of all, you need to type a valid e-mail (exemple@exemple.com) and a valid password (at least six characteres), then you can log in.
@@ -13,15 +17,15 @@
 - All the expenses have two button, by clicking in the yellow one you can edit it, and the red one removes it.
 - At the top the total sum off all expenses will be available converted to Brazil's currency.
 
-## This project works with the following API:
+### This project works with the following API:
 
 - (https://docs.awesomeapi.com.br/api-de-moedas).
 
-## Main tech stack:
+### Main tech stack:
 
 - React
 - Redux
 
-## Trybe:
+### Trybe:
 
 - This project was devoloped while I was studying the Front-End course of [Trybe](https://www.betrybe.com/), with the goal to improve and consolidate react and redux skills.

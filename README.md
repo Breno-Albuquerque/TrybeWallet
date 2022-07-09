@@ -1,29 +1,38 @@
-## Application link:
+# Trivia Game:
 
-- https://trybewallet-b.vercel.app
+It's a simple virtual wallet !
 
-# What is TrybeWallet:
+## Links:
 
-- It's a virtual wallet able to store multiple expenses in different currency values.
-- By registering your expenses, the total amount spent will be avaible in the screen.
-- If you want, it's possible to edit or remove any expense and everything will be updated for you.
+- Deploy: https://trybewallet-b.vercel.app
 
-# Requirements:
+## Features:
 
-- NodeJS LTS (14+)
+- Store multiple expenses in different currency values.
+- By registering expenses, the total amount spent will be avaible in the screen.
+- Edit or remove any expense and everything will be updated for you.
 
-### Install and Run:
+## Main tech stack:
 
-- ```git clone git@github.com:breno-albuquerque/trybewallet.git```
-- ```cd trybewallet```
-- ```npm install```
-- ```npm start```
-
-### Main tech stack:
-
-- React
+- React.js
 - Redux
 
-### Trybe:
+## Running it localy:
 
-- This project was devoloped while I was studying the Front-End course of [Trybe](https://www.betrybe.com/), with the goal to improve and consolidate react and redux skills.
+#### Requirements:
+
+- NodeJS (>16)
+
+##### Clone Repository
+
+```
+git clone git@github.com:breno-albuquerque/trybewallet.git
+cd trybewallet
+```
+
+##### Install package.json and run the app
+
+```
+npm install
+npm start
+```
